@@ -1,0 +1,29 @@
+{
+  "name": "shish/eventtracer-php",
+  "type": "library",
+  "description": "An API to write JSON traces as used by the Chrome Trace Viewer",
+  "license": "MIT",
+  "homepage": "https://github.com/shish/eventtracer-php",
+  "authors": [
+    {
+      "name": "Shish",
+      "email": "webmaster@shishnet.org",
+      "homepage": "http://shishnet.org",
+      "role": "Developer"
+    }
+  ],
+  "autoload": {
+    "classmap": [
+      "src/"
+    ]
+  },
+  "require": {
+    "php": "^8.0",
+    "ext-json": "*"
+  },
+  "require-dev": {
+    "friendsofphp/php-cs-fixer" : "^3.12",
+    "phpunit/phpunit": "^9.0",
+    "phpstan/phpstan": "^1.9"
+  }
+}

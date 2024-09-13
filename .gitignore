@@ -5,7 +5,7 @@ data
 
 #Composer
 composer.phar
-/vendor/
+
 
 # Created by http://www.gitignore.io
 

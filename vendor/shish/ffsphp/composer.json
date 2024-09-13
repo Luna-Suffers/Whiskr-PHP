@@ -1,0 +1,30 @@
+{
+    "name": "shish/ffsphp",
+    "type": "library",
+    "description": "A collection of workarounds for stupid PHP things",
+    "keywords": [],
+    "homepage": "https://github.com/shish/ffsphp",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Shish",
+            "email": "webmaster@shishnet.org",
+            "homepage": "http://shishnet.org",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "ext-pdo": "*"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "3.41.1",
+        "phpunit/phpunit": "10.5.3",
+        "phpstan/phpstan": "1.10.50"
+    },
+    "autoload": {
+        "psr-4": {
+            "FFSPHP\\": "src"
+        }
+    }
+}

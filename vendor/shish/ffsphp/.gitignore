@@ -1,0 +1,9 @@
+vendor/
+.idea/
+*.phar
+*.clover
+*.cache
+*.sqlite
+
+# libraries generally don't want lock files
+composer.lock
