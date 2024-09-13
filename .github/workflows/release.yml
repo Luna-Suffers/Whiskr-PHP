@@ -1,0 +1,41 @@
+name: Create Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build:
+    name: Create Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Get version from tag
+        id: get_version
+        run: echo VERSION=${GITHUB_REF/refs\/tags\/v/} >> $GITHUB_OUTPUT
+
+      - name: Check and set sys_config
+        run: |
+          grep ${{ steps.get_version.outputs.VERSION }} core/sys_config.php
+          echo "_d('BUILD_TIME', '$(date +'%Y-%m-%dT%H:%M:%S')');" >> core/sys_config.php
+          echo "_d('BUILD_HASH', '$GITHUB_SHA');" >> core/sys_config.php
+
+      - name: Build
+        run: |
+          composer install --no-dev --no-progress
+          cd ..
+          tar cvzf shimmie2-${{ steps.get_version.outputs.VERSION }}.tgz shimmie2
+          zip -r shimmie2-${{ steps.get_version.outputs.VERSION }}.zip shimmie2
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          name: Shimmie ${{ steps.get_version.outputs.VERSION }}
+          body: Automated release from tags
+          files: |
+            ../shimmie2-${{ steps.get_version.outputs.VERSION }}.zip
+            ../shimmie2-${{ steps.get_version.outputs.VERSION }}.tgz

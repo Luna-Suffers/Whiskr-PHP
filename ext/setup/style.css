@@ -1,0 +1,32 @@
+.setupblocks {
+	column-width: 400px;
+	max-width: 1200px;
+	margin: auto;
+}
+.setupblocks > .setupblock:first-of-type { margin-top: 0; }
+
+.setupblock {
+	break-inside: avoid;
+	column-break-inside: avoid;
+	text-align: center;
+	width: 90%;
+}
+.setupblock TEXTAREA {
+	width: 100%;
+	font-size: 0.75rem;
+	resize: vertical;
+}
+
+#Setupmain .blockbody {
+	background: none;
+	border: none;
+	box-shadow: none;
+	margin: 0;
+	padding: 0;
+}
+.setupblock .form {
+	width: 100%;
+}
+.setupblock .form TH {
+	font-weight: normal;
+}
