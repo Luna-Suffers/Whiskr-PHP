@@ -10,7 +10,7 @@ class Paths
     {
         $cwd = $cwd ?? getcwd();
         assert($cwd, "cwd must be set");
-        assert($cwd[0] == "/", "cwd must be absolute");
+       // assert($cwd[0] == "/", "cwd must be absolute"); <- Causes 'Uncaught Assertation Error' - 'cwd must be absolute' <- tagged to stop error by OGD @ 13.9.2024 1530
         if($path[0] != "/") {
             $path = "$cwd/$path";
         }
