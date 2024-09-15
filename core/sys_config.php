@@ -32,7 +32,7 @@ _d("COOKIE_PREFIX", 'shm');     // string   if you run multiple galleries with n
 _d("SPEED_HAX", false);         // boolean  do some questionable things in the name of performance
 _d("WH_SPLITS", 1);             // int      how many levels of subfolders to put in the warehouse
 _d("VERSION", "2.11.4");        // string   shimmie version
-_d("TIMEZONE", "GMT");           // string   timezone
+_d("TIMEZONE", "Europe/London");           // string   timezone
 _d("EXTRA_EXTS", "");           // string   optional extra extensions
 _d("BASE_HREF", null);          // string   force a specific base URL (default is auto-detect)
 _d("TRACE_FILE", null);         // string   file to log performance data into

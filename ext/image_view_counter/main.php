@@ -10,7 +10,7 @@ class ImageViewCounter extends Extension
 {
     /** @var ImageViewCounterTheme */
     protected Themelet $theme;
-    private int $view_interval = 3600; # allows views to be added each hour
+    private int $view_interval = 0; # allows views to be added each 0 seconds
 
     # Add Setup Block with options for view counter
     public function onSetupBuilding(SetupBuildingEvent $event): void
@@ -26,7 +26,7 @@ class ImageViewCounter extends Extension
 
         $imgid = $event->image->id;
 
-        // counts views from current IP in the last hour
+        // counts views from current IP in the 0 seconds
         $recent_from_ip = (int)$database->get_one(
             "
 				SELECT COUNT(*)

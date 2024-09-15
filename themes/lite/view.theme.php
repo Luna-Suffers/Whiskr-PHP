@@ -33,12 +33,12 @@ class CustomViewPostTheme extends ViewPostTheme
 
         global $user;
         if ($user->can(Permissions::VIEW_IP)) {
-            $h_ownerlink .= " ($h_ip)";
+            $h_ownerlink .= "<br>Posted from: ($h_ip)";
         }
 
         $html = "
 		Id: {$image->id}
-		<br>Posted: $h_date by $h_ownerlink
+		<br>Posted: $h_date by $h_ownerlink 
 		<br>Size: {$image->width}x{$image->height}
 		<br>Filesize: $h_filesize
 		<br>Type: ".$h_type."
