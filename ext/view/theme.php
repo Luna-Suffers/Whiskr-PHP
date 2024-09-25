@@ -121,7 +121,7 @@ class ViewPostTheme extends Themelet
 
         if(
             (!$image->is_locked() || $user->can(Permissions::EDIT_IMAGE_LOCK)) &&
-            $user->can(Permissions::EDIT_IMAGE_TAG)
+            $user->can(Permissions::EDIT_IMAGE_TAG) && ($user->name === $image->get_owner()->name || $user->can(Permissions::CREATE_OTHER_USER))
         ) {
             $editor_parts[] = TR(TD(
                 ["colspan" => 4],
@@ -140,5 +140,6 @@ class ViewPostTheme extends Themelet
                 ...$editor_parts,
             ),
         );
+        
     }
 }
